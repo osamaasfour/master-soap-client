@@ -1,5 +1,5 @@
 
-package helloworld;
+package generated;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -17,20 +17,20 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "HelloWorldService", targetNamespace = "http://server/", wsdlLocation = "http://localhost:8081/helloworld?wsdl")
+@WebServiceClient(name = "HelloWorldService", targetNamespace = "http://example/", wsdlLocation = "http://localhost:1337/ws/hello?wsdl")
 public class HelloWorldService
     extends Service
 {
 
     private final static URL HELLOWORLDSERVICE_WSDL_LOCATION;
     private final static WebServiceException HELLOWORLDSERVICE_EXCEPTION;
-    private final static QName HELLOWORLDSERVICE_QNAME = new QName("http://server/", "HelloWorldService");
+    private final static QName HELLOWORLDSERVICE_QNAME = new QName("http://example/", "HelloWorldService");
 
     static {
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8081/helloworld?wsdl");
+            url = new URL("http://localhost:1337/ws/hello?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
@@ -69,7 +69,7 @@ public class HelloWorldService
      */
     @WebEndpoint(name = "HelloWorldPort")
     public HelloWorld getHelloWorldPort() {
-        return super.getPort(new QName("http://server/", "HelloWorldPort"), HelloWorld.class);
+        return super.getPort(new QName("http://example/", "HelloWorldPort"), HelloWorld.class);
     }
 
     /**
@@ -81,7 +81,7 @@ public class HelloWorldService
      */
     @WebEndpoint(name = "HelloWorldPort")
     public HelloWorld getHelloWorldPort(WebServiceFeature... features) {
-        return super.getPort(new QName("http://server/", "HelloWorldPort"), HelloWorld.class, features);
+        return super.getPort(new QName("http://example/", "HelloWorldPort"), HelloWorld.class, features);
     }
 
     private static URL __getWsdlLocation() {

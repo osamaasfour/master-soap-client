@@ -1,5 +1,5 @@
 
-package helloworld;
+package generated;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -17,7 +17,7 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "HelloWorld", targetNamespace = "http://server/")
+@WebService(name = "HelloWorld", targetNamespace = "http://example/")
 @XmlSeeAlso({
     ObjectFactory.class
 })
@@ -32,9 +32,9 @@ public interface HelloWorld {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "sayHelloWorldFrom", targetNamespace = "http://server/", className = "helloworld.SayHelloWorldFrom")
-    @ResponseWrapper(localName = "sayHelloWorldFromResponse", targetNamespace = "http://server/", className = "helloworld.SayHelloWorldFromResponse")
-    @Action(input = "http://server/HelloWorld/sayHelloWorldFromRequest", output = "http://server/HelloWorld/sayHelloWorldFromResponse")
+    @RequestWrapper(localName = "sayHelloWorldFrom", targetNamespace = "http://example/", className = "generated.SayHelloWorldFrom")
+    @ResponseWrapper(localName = "sayHelloWorldFromResponse", targetNamespace = "http://example/", className = "generated.SayHelloWorldFromResponse")
+    @Action(input = "http://example/HelloWorld/sayHelloWorldFromRequest", output = "http://example/HelloWorld/sayHelloWorldFromResponse")
     public String sayHelloWorldFrom(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
