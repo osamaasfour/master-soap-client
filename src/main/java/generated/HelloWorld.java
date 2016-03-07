@@ -39,4 +39,19 @@ public interface HelloWorld {
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "requestMessage", targetNamespace = "http://example/", className = "generated.RequestMessage")
+    @ResponseWrapper(localName = "requestMessageResponse", targetNamespace = "http://example/", className = "generated.RequestMessageResponse")
+    @Action(input = "http://example/HelloWorld/requestMessageRequest", output = "http://example/HelloWorld/requestMessageResponse")
+    public String requestMessage(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
 }

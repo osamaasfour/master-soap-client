@@ -24,7 +24,9 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _RequestMessage_QNAME = new QName("http://example/", "requestMessage");
     private final static QName _SayHelloWorldFrom_QNAME = new QName("http://example/", "sayHelloWorldFrom");
+    private final static QName _RequestMessageResponse_QNAME = new QName("http://example/", "requestMessageResponse");
     private final static QName _SayHelloWorldFromResponse_QNAME = new QName("http://example/", "sayHelloWorldFromResponse");
 
     /**
@@ -32,6 +34,14 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link RequestMessage }
+     * 
+     */
+    public RequestMessage createRequestMessage() {
+        return new RequestMessage();
     }
 
     /**
@@ -51,12 +61,38 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link RequestMessageResponse }
+     * 
+     */
+    public RequestMessageResponse createRequestMessageResponse() {
+        return new RequestMessageResponse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link RequestMessage }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://example/", name = "requestMessage")
+    public JAXBElement<RequestMessage> createRequestMessage(RequestMessage value) {
+        return new JAXBElement<RequestMessage>(_RequestMessage_QNAME, RequestMessage.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SayHelloWorldFrom }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://example/", name = "sayHelloWorldFrom")
     public JAXBElement<SayHelloWorldFrom> createSayHelloWorldFrom(SayHelloWorldFrom value) {
         return new JAXBElement<SayHelloWorldFrom>(_SayHelloWorldFrom_QNAME, SayHelloWorldFrom.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link RequestMessageResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://example/", name = "requestMessageResponse")
+    public JAXBElement<RequestMessageResponse> createRequestMessageResponse(RequestMessageResponse value) {
+        return new JAXBElement<RequestMessageResponse>(_RequestMessageResponse_QNAME, RequestMessageResponse.class, null, value);
     }
 
     /**
